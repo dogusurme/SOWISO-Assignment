@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(224, 198, 164);
+    }
+    .card {
+      
+      margin: auto;
+      margin-top: 15%;
+      border: 5px solid rgb(60, 90, 0);
+      padding: 10px;
+      background-color: orange;
+      font-size: large;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .btn-primary{
+      margin-top: 1%;
+    }
+   
+    .card-text{
+      margin-left: 1%;
+      
+    }
+    .label{
+      margin-bottom: 1%;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="card w-75">
+    <div class="card-body">
+      <h1 class="card-title">Assignment</h1>
+      
+      <p class="card-text"><span id="a">  </span> + <span id="b">  </span>= ?</p>
+      <form onkeypress="return event.keyCode != 13">
+        <div class="form-group">
+          <label class="label" for="formGroupExampleInput">Write your answer</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Answer">
+        </div>
+        <input type="button" class="btn btn-primary btn-lg" onclick="checkAnswer()" value="Check">
+      </form>
+      
+      
+    </div>
+  </div>
+  
+  
+  
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script>
+  var result=document.getElementById("formGroupExampleInput");
+  var a,b;
+  function questionGenerator(){
+    
+    a=  Math.floor(Math.random() * 10);
+    b=  Math.floor(Math.random() * 10);
+    document.getElementById("a").textContent= a;
+    document.getElementById("b").textContent= b;
+
+  }
+  questionGenerator();
+  function checkAnswer(){
+
+    if(result["value"]==(a+b)){
+      alert("Correct!");
+      questionGenerator();
+    }
+    else{
+      alert("Try Again!");
+    }
+
+  }
+  
+</script>
+</html>
+
+
